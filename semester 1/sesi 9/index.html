@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Show Video</title>
+  </head>
+  <style>
+    .container {
+      max-width: 50%;
+      margin: 0 auto;
+      position: relative;
+    }
+
+    video {
+      display: block;
+      width: 100%;
+    }
+
+    .video-component {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <video>
+        <source src="dc.mp4" type="video/mp4" />
+      </video>
+
+      <div class="video-component">
+        <button onclick="play()">Play</button>
+        <button onclick="pause()">Pause</button>
+        <button onclick="minimize()">Minimize</button>
+      </div>
+    </div>
+
+    <script>
+      const videoComponet = document.querySelector("video");
+      function play() {
+        console.log("play");
+        videoComponet.play();
+      }
+
+      function pause() {
+        console.log("pause");
+        videoComponet.pause();
+      }
+
+      function minimize() {
+        console.log("minimize");
+        videoComponet.requestPictureInPicture();
+      }
+    </script>
+  </body>
+</html>
