@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SESI 11 GANTI WARNA</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Pilih Warna</div>
+      <div class="box">
+        <div class="circle red"></div>
+        <div class="circle blue"></div>
+        <div class="circle yellow"></div>
+        <div class="circle green"></div>
+      </div>
+      <button onclick="reset()">Reset</button>
+    </div>
+    <script>
+      const circles = document.querySelectorAll(".circle");
+      let title = document.querySelector(".title");
+
+      circles.forEach((circle) => {
+        circle.addEventListener("click", ({ target }) => {
+          const computedStyle = getComputedStyle(target);
+          document.body.style.backgroundColor = computedStyle.backgroundColor;
+          if (computedStyle.backgroundColor == "rgb(91, 91, 255)") {
+            title.style.color = "white";
+          } else {
+            title.style.color = "black";
+          }
+        });
+      });
+
+      function reset() {
+        document.body.style.backgroundColor = "white";
+        title.style.color = "black";
+      }
+    </script>
+  </body>
+</html>
