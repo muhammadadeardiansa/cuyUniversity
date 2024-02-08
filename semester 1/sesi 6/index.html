@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>SESI 6 </title>
+</head>
+
+<body>
+    <div class="container">
+        <nav>
+            <a href="/">HOME</a>
+            <a onclick="darkMode()">MODE</a>
+        </nav>
+        <h1>test</h1>
+    </div>
+
+    <script>
+        let body = document.body;
+        const darkLimit = 5;
+        let darkCounter = 0;
+        let darkSisa;
+
+        function darkMode() {
+            if (darkSisa == 1) {
+                console.log("Sisa Klik anda Habis");
+                return;
+            }
+
+            darkCounter += 1;
+            darkSisa = darkLimit - darkCounter;
+            console.log("Sisa Klik anda ", darkSisa);
+            //mengganti class atau mengembalikan class sebelumnya
+            body.classList.toggle("dark");
+
+        }
+    </script>
+</body>
+
+</html>
